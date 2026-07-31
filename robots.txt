@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://wonner163.github.io/WonnerWebsite/sitemap.xml
