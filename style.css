@@ -333,6 +333,43 @@ a { color: var(--accent); }
   color: var(--text-muted);
 }
 
+.pub-videos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin: 4px 0 12px;
+}
+
+.pub-video {
+  width: 280px;
+  max-width: 100%;
+}
+
+.pub-video-label {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+.pub-video-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--bg-alt);
+}
+
+.pub-video-frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
 /* Plain lists */
 .plain-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px; }
 
