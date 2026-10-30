@@ -15,9 +15,9 @@ navLinks.querySelectorAll("a").forEach((link) => {
   });
 });
 
-const track = document.getElementById("carouselTrack");
-const slides = Array.from(track.children);
+const slides = Array.from(document.querySelectorAll("#carouselTrack .slide"));
 const dots = document.getElementById("carouselDots");
+const carousel = document.getElementById("carousel");
 let current = 0;
 let paused = false;
 
@@ -32,35 +32,35 @@ slides.forEach((_, i) => {
 
 function goTo(i) {
   current = (i + slides.length) % slides.length;
-  track.scrollTo({ left: slides[current].offsetLeft - slides[0].offsetLeft });
+  slides.forEach((s, n) => s.classList.toggle("is-active", n === current));
+  Array.from(dots.children).forEach((d, n) => d.setAttribute("aria-selected", String(n === current)));
 }
 
-function syncDots() {
-  const idx = Math.round(track.scrollLeft / (slides[0].offsetWidth + 16));
-  current = Math.min(Math.max(idx, 0), slides.length - 1);
-  Array.from(dots.children).forEach((d, i) => d.setAttribute("aria-selected", String(i === current)));
-}
-
-track.addEventListener("scroll", syncDots, { passive: true });
 document.getElementById("carouselPrev").addEventListener("click", () => goTo(current - 1));
 document.getElementById("carouselNext").addEventListener("click", () => goTo(current + 1));
-track.addEventListener("keydown", (e) => {
+carousel.addEventListener("keydown", (e) => {
   if (e.key === "ArrowLeft") goTo(current - 1);
   if (e.key === "ArrowRight") goTo(current + 1);
 });
 
-const carousel = document.getElementById("carousel");
-["mouseenter", "focusin", "touchstart"].forEach((ev) => carousel.addEventListener(ev, () => (paused = true), { passive: true }));
-["mouseleave", "focusout"].forEach((ev) => carousel.addEventListener(ev, () => (paused = false)));
+carousel.addEventListener("mouseenter", () => (paused = true));
+carousel.addEventListener("mouseleave", () => (paused = false));
+carousel.addEventListener("touchstart", () => (paused = true), { passive: true });
+carousel.addEventListener("touchend", () => setTimeout(() => (paused = false), 4000), { passive: true });
 
-let visible = false;
-new IntersectionObserver(([entry]) => (visible = entry.isIntersecting)).observe(carousel);
-if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-  setInterval(() => {
-    if (!paused && visible) goTo(current + 1);
-  }, 5000);
-}
-syncDots();
+let swipeX = null;
+carousel.addEventListener("touchstart", (e) => (swipeX = e.touches[0].clientX), { passive: true });
+carousel.addEventListener("touchend", (e) => {
+  if (swipeX === null) return;
+  const dx = e.changedTouches[0].clientX - swipeX;
+  if (Math.abs(dx) > 40) goTo(current + (dx < 0 ? 1 : -1));
+  swipeX = null;
+});
+
+setInterval(() => {
+  if (!paused) goTo(current + 1);
+}, 4000);
+goTo(0);
 
 const lightbox = document.getElementById("lightbox");
 const lightboxImg = document.getElementById("lightboxImg");
@@ -69,7 +69,9 @@ slides.forEach((slide) => {
     const img = slide.querySelector("img");
     lightboxImg.src = img.src;
     lightboxImg.alt = img.alt;
+    paused = true;
     lightbox.showModal();
   });
 });
+lightbox.addEventListener("close", () => (paused = false));
 lightbox.addEventListener("click", () => lightbox.close());
