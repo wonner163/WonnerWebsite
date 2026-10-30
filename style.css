@@ -433,7 +433,9 @@ a { color: var(--accent); }
 .carousel { position: relative; }
 .carousel-window {
   position: relative;
-  aspect-ratio: 16 / 11;
+  aspect-ratio: 16 / 9;
+  max-height: calc(100vh - 220px);
+  min-height: 380px;
   background: var(--card-bg);
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -478,17 +480,17 @@ a { color: var(--accent); }
 .slide figcaption strong { flex: 1 1 220px; }
 .carousel-btn {
   position: absolute;
-  top: calc(50% - 30px);
+  top: calc(50% - 22px - 25px);
   z-index: 2;
   width: 44px;
   height: 44px;
   border-radius: 50%;
   border: 1px solid var(--border);
-  background: var(--card-bg);
-  color: var(--text);
+  background: rgba(20, 22, 26, 0.55);
+  color: #fff;
   font-size: 1.8rem;
   line-height: 1;
-  box-shadow: var(--shadow);
+  box-shadow: none;
   cursor: pointer;
   transition: transform 0.15s ease, background 0.15s ease;
 }
@@ -524,7 +526,7 @@ a { color: var(--accent); }
   cursor: pointer;
 }
 @media (max-width: 600px) {
-  .carousel-window { aspect-ratio: 4 / 3.4; }
+  .carousel-window { aspect-ratio: 4 / 3.4; max-height: none; min-height: 0; }
   .carousel-btn { width: 36px; height: 36px; font-size: 1.5rem; }
   .carousel-prev { left: 6px; }
   .carousel-next { right: 6px; }
