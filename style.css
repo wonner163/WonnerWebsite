@@ -430,12 +430,15 @@ a { color: var(--accent); }
 
 /* Research at a Glance carousel */
 .gallery-tagline { color: var(--text-muted); margin: -8px 0 24px; }
-.carousel { position: relative; }
+.carousel {
+  position: relative;
+  width: min(1240px, 96vw, calc((100vh - 130px) * 1.7778));
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
 .carousel-window {
   position: relative;
   aspect-ratio: 16 / 9;
-  max-height: calc(100vh - 220px);
-  min-height: 380px;
   background: var(--card-bg);
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -526,7 +529,8 @@ a { color: var(--accent); }
   cursor: pointer;
 }
 @media (max-width: 600px) {
-  .carousel-window { aspect-ratio: 4 / 3.4; max-height: none; min-height: 0; }
+  .carousel { width: 100%; margin-left: 0; transform: none; }
+  .carousel-window { aspect-ratio: 4 / 3.4; }
   .carousel-btn { width: 36px; height: 36px; font-size: 1.5rem; }
   .carousel-prev { left: 6px; }
   .carousel-next { right: 6px; }
