@@ -58,6 +58,72 @@
     </div>
   </section>
 
+  <section id="gallery" class="section container">
+    <h2>Research at a Glance</h2>
+    <p class="gallery-tagline">Swipe through my robots 🤖 — graphical abstracts from my papers. Tap any slide to zoom in.</p>
+    <div class="carousel" id="carousel" role="region" aria-roledescription="carousel" aria-label="Graphical abstracts">
+      <div class="carousel-window" id="carouselTrack">
+        <figure class="slide" aria-roledescription="slide">
+          <button type="button" class="slide-img" aria-label="Zoom in: weld seam detection graphical abstract">
+            <img src="assets/abstracts/iros2026.jpg" alt="Graphical abstract of the IROS 2026 paper on automated weld seam detection and 3D map integration for industrial vessel inspection" width="1800" height="1013">
+          </button>
+          <figcaption>
+            <span class="pub-type">IROS 2026</span>
+            <strong>Weld seam detection &amp; 3D mapping for vessel inspection</strong>
+            <a href="https://drive.google.com/file/d/1wScnyeEzOpeaP6gVnKeSLv4U2vKJuFod/view?usp=drive_link" target="_blank" rel="noopener">Paper ↗</a>
+          </figcaption>
+        </figure>
+        <figure class="slide" aria-roledescription="slide">
+          <button type="button" class="slide-img" aria-label="Zoom in: Magnetic Spherical Omnidirectional Wheel poster">
+            <img src="assets/abstracts/robomech-wheel.jpg" alt="Poster for the ROBOMECH2026 paper on the magnetic spherical omnidirectional wheel mechanism" width="1800" height="1274">
+          </button>
+          <figcaption>
+            <span class="pub-type">ROBOMECH 2026</span>
+            <strong>Magnetic Spherical Omnidirectional Wheel</strong>
+            <a href="https://drive.google.com/file/d/1MmJopEN_IusfGDx03Kak2dpbyB-57E0z/view?usp=sharing" target="_blank" rel="noopener">Paper ↗</a>
+          </figcaption>
+        </figure>
+        <figure class="slide" aria-roledescription="slide">
+          <button type="button" class="slide-img" aria-label="Zoom in: Omnidirectional Magnetic Climbing Robot poster">
+            <img src="assets/abstracts/robomech-climber.jpg" alt="Poster for the ROBOMECH2026 paper on an omnidirectional magnetic climbing robot for thin ferrous and non-ferrous surfaces" width="1800" height="1274">
+          </button>
+          <figcaption>
+            <span class="pub-type">ROBOMECH 2026</span>
+            <strong>Omnidirectional Magnetic Climbing Robot for Thin Surfaces</strong>
+            <a href="https://drive.google.com/file/d/172PWca_6Scp-4xCXF1_bNo3Ww1B1ynAc/view?usp=sharing" target="_blank" rel="noopener">Paper ↗</a>
+          </figcaption>
+        </figure>
+        <figure class="slide" aria-roledescription="slide">
+          <button type="button" class="slide-img" aria-label="Zoom in: Inchworm-inspired neural control graphical abstract">
+            <img src="assets/abstracts/icra2026.jpg" alt="Graphical abstract of the ICRA 2026 paper on inchworm-inspired adaptive multimodal neural control for an autonomous inspection robot" width="1800" height="1013">
+          </button>
+          <figcaption>
+            <span class="pub-type">ICRA 2026</span>
+            <strong>Inchworm-inspired Neural Control for an Inspection Robot</strong>
+            <a href="https://youtu.be/TiLU2V0leHs" target="_blank" rel="noopener">Video ↗</a>
+          </figcaption>
+        </figure>
+        <figure class="slide" aria-roledescription="slide">
+          <button type="button" class="slide-img" aria-label="Zoom in: REFINE-bot graphical abstract">
+            <img src="assets/abstracts/iros2025.jpg" alt="Graphical abstract of the IROS 2025 paper on REFINE-bot, a furnace cleaning robot" width="1800" height="1013">
+          </button>
+          <figcaption>
+            <span class="pub-type">IROS 2025</span>
+            <strong>REFINE-bot: Furnace Cleaning Robot</strong>
+            <a href="https://ieeexplore.ieee.org/document/11247011" target="_blank" rel="noopener">Paper ↗</a>
+          </figcaption>
+        </figure>
+      </div>
+      <button type="button" class="carousel-btn carousel-prev" id="carouselPrev" aria-label="Previous slide">‹</button>
+      <button type="button" class="carousel-btn carousel-next" id="carouselNext" aria-label="Next slide">›</button>
+    </div>
+    <div class="carousel-dots" id="carouselDots" role="tablist" aria-label="Choose slide"></div>
+    <dialog id="lightbox" class="lightbox" aria-label="Enlarged graphical abstract">
+      <img id="lightboxImg" src="" alt="">
+      <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Close">×</button>
+    </dialog>
+  </section>
+
   <section id="about" class="section container">
     <h2>About</h2>
     <div class="about-grid">
@@ -246,72 +312,6 @@
         <p>Designed and built a Cartesian robot structure from scratch, tuned its PID control system, and built the microcontroller communication protocol.</p>
       </article>
     </div>
-  </section>
-
-  <section id="gallery" class="section container">
-    <h2>Research at a Glance</h2>
-    <p class="gallery-tagline">Swipe through my robots 🤖 — graphical abstracts from my papers. Tap any slide to zoom in.</p>
-    <div class="carousel" id="carousel" role="region" aria-roledescription="carousel" aria-label="Graphical abstracts">
-      <div class="carousel-window" id="carouselTrack">
-        <figure class="slide" aria-roledescription="slide">
-          <button type="button" class="slide-img" aria-label="Zoom in: weld seam detection graphical abstract">
-            <img src="assets/abstracts/iros2026.jpg" alt="Graphical abstract of the IROS 2026 paper on automated weld seam detection and 3D map integration for industrial vessel inspection" width="1800" height="1013">
-          </button>
-          <figcaption>
-            <span class="pub-type">IROS 2026</span>
-            <strong>Weld seam detection &amp; 3D mapping for vessel inspection</strong>
-            <a href="https://drive.google.com/file/d/1wScnyeEzOpeaP6gVnKeSLv4U2vKJuFod/view?usp=drive_link" target="_blank" rel="noopener">Paper ↗</a>
-          </figcaption>
-        </figure>
-        <figure class="slide" aria-roledescription="slide">
-          <button type="button" class="slide-img" aria-label="Zoom in: Magnetic Spherical Omnidirectional Wheel poster">
-            <img src="assets/abstracts/robomech-wheel.jpg" alt="Poster for the ROBOMECH2026 paper on the magnetic spherical omnidirectional wheel mechanism" width="1800" height="1274">
-          </button>
-          <figcaption>
-            <span class="pub-type">ROBOMECH 2026</span>
-            <strong>Magnetic Spherical Omnidirectional Wheel</strong>
-            <a href="https://drive.google.com/file/d/1MmJopEN_IusfGDx03Kak2dpbyB-57E0z/view?usp=sharing" target="_blank" rel="noopener">Paper ↗</a>
-          </figcaption>
-        </figure>
-        <figure class="slide" aria-roledescription="slide">
-          <button type="button" class="slide-img" aria-label="Zoom in: Omnidirectional Magnetic Climbing Robot poster">
-            <img src="assets/abstracts/robomech-climber.jpg" alt="Poster for the ROBOMECH2026 paper on an omnidirectional magnetic climbing robot for thin ferrous and non-ferrous surfaces" width="1800" height="1274">
-          </button>
-          <figcaption>
-            <span class="pub-type">ROBOMECH 2026</span>
-            <strong>Omnidirectional Magnetic Climbing Robot for Thin Surfaces</strong>
-            <a href="https://drive.google.com/file/d/172PWca_6Scp-4xCXF1_bNo3Ww1B1ynAc/view?usp=sharing" target="_blank" rel="noopener">Paper ↗</a>
-          </figcaption>
-        </figure>
-        <figure class="slide" aria-roledescription="slide">
-          <button type="button" class="slide-img" aria-label="Zoom in: Inchworm-inspired neural control graphical abstract">
-            <img src="assets/abstracts/icra2026.jpg" alt="Graphical abstract of the ICRA 2026 paper on inchworm-inspired adaptive multimodal neural control for an autonomous inspection robot" width="1800" height="1013">
-          </button>
-          <figcaption>
-            <span class="pub-type">ICRA 2026</span>
-            <strong>Inchworm-inspired Neural Control for an Inspection Robot</strong>
-            <a href="https://youtu.be/TiLU2V0leHs" target="_blank" rel="noopener">Video ↗</a>
-          </figcaption>
-        </figure>
-        <figure class="slide" aria-roledescription="slide">
-          <button type="button" class="slide-img" aria-label="Zoom in: REFINE-bot graphical abstract">
-            <img src="assets/abstracts/iros2025.jpg" alt="Graphical abstract of the IROS 2025 paper on REFINE-bot, a furnace cleaning robot" width="1800" height="1013">
-          </button>
-          <figcaption>
-            <span class="pub-type">IROS 2025</span>
-            <strong>REFINE-bot: Furnace Cleaning Robot</strong>
-            <a href="https://ieeexplore.ieee.org/document/11247011" target="_blank" rel="noopener">Paper ↗</a>
-          </figcaption>
-        </figure>
-      </div>
-      <button type="button" class="carousel-btn carousel-prev" id="carouselPrev" aria-label="Previous slide">‹</button>
-      <button type="button" class="carousel-btn carousel-next" id="carouselNext" aria-label="Next slide">›</button>
-    </div>
-    <div class="carousel-dots" id="carouselDots" role="tablist" aria-label="Choose slide"></div>
-    <dialog id="lightbox" class="lightbox" aria-label="Enlarged graphical abstract">
-      <img id="lightboxImg" src="" alt="">
-      <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Close">×</button>
-    </dialog>
   </section>
 
   <section id="publications" class="section container">
